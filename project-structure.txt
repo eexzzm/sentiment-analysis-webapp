@@ -1,0 +1,29 @@
+sentiment-webapp/
+│
+├── notebooks/                # Tempat kamu menyimpan Jupyter notebook awal (versi ipynb)
+│   └── model_training.ipynb  # Notebook yang memuat preprocessing, training, evaluasi
+│
+├── data/                     # (Opsional) Tempat data mentah atau contoh CSV
+│
+├── model/                   # Folder khusus untuk menyimpan file model terlatih & kamus
+│   ├── sentiment_pipeline.pkl  # (hasil joblib.dump) pipeline TF-IDF + NaiveBayes
+│   └── slang_dict.json         # (atau slang_dict.py) kamus slang/alay dalam format JSON atau modul Python
+│
+├── backend/                  # Semua kode untuk server (API, logika prediksi, preprocessing)
+│   ├── __init__.py            # kalau pakai Python package
+│   ├── app.py                 # file entry-point (misalnya Flask/FastAPI) atau index.php (jika PHP)
+│   ├── preprocessing.py       # fungsi-fungsi pembersihan (clean_text, normalize_alay, dll.)
+│   ├── predict.py             # wrapper untuk memuat model + menjalankan prediksi
+│   └── requirements.txt       # daftar library Python yang dibutuhkan
+│
+├── frontend/                 # Semua kode untuk antarmuka web (HTML/CSS/JS)
+│   ├── static/                # file statis: css/, js/, images/, dll.
+│   │   ├── css/
+│   │   │   └── style.css
+│   │   └── js/
+│   │       └── main.js
+│   └── templates/             # kalau pakai Flask: folder untuk HTML Jinja2
+│       └── index.html         # form upload + tampilan hasil
+│
+├── README.md                  # Deskripsi proyek, tujuan, cara instalasi, dsb.
+└── .gitignore                 # File atau folder yang tidak perlu di-Git (venv/, __pycache__, dsb.)
