@@ -1,0 +1,32 @@
+sentiment-webapp/
+│
+├── notebooks/                      # Jupyter Notebooks used for model training/evaluation
+│   └── model_training.ipynb
+│
+├── model/                          # Storage for trained model and dictionaries
+│   ├── sentiment_pipeline.pkl      # Final TF-IDF + NaiveBayes pipeline (joblib)
+│   └── slang_dict.json             # Cleaned and finalized slang/alay dictionary
+│
+├── backend/                        # Python logic for backend server and processing
+│   ├── __init__.py                 # Optional: makes this a Python module
+│   ├── app.py                      # Flask app entry point
+│   ├── preprocessing.py            # All preprocessing/cleaning functions
+│   ├── predict.py                  # Functions to load model and predict sentiment
+│   ├── requirements.txt            # Python dependencies
+│   └── utils.py                    # (Optional) helpers like file handling, logging, etc.
+│
+├── frontend/                       # Frontend templates and static files for the web UI
+│   ├── templates/
+│   │   └── index.html              # Upload form and results display (Jinja2)
+│   └── static/
+│       ├── css/
+│       │   └── style.css
+│       └── js/
+│           └── main.js
+│
+├── uploads/                        # Temporary folder to store uploaded CSVs (optional)
+│   └── (uploaded files go here)    # Can be auto-cleaned after processing
+│
+├── .gitignore                      # Files to ignore in Git (e.g., __pycache__, *.pkl, uploads/)
+├── README.md                       # Project overview and setup instructions
+└── run.py                          # Optional: flask run entry point outside of /backend
