@@ -1,3 +1,0 @@
-model trained with Multinomial NaiveBayes and 12-hold-cross data splitting
-
-score accuracy 0.68
