@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction</title>
+</head>
+<body>
+    <h1>Upload CSV</h1>
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+        <label for="file">Choose a csv file:</label>
+        <!-- accept csv, Excel Files 97-2003 and 2007+ -->
+        <input type="file" id="file" name="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" required/>
+        <input type="submit" value="predict">
+    </form>
+</body>
+</html>
