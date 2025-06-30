@@ -56,10 +56,10 @@ def nontext_clean(text):
 
 def clean_text(text):
     text = str(text)
-    text = remove_non_ascii(text)
     text = remove_emoji(text)
     text = case_folding(text)
     text = nontext_clean(text)
     text = reduce_repeated_chars(text)
     text = normalize_alay(text)
+    print('cleaned: ', text)
     return text.strip()
