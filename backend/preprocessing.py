@@ -61,5 +61,4 @@ def clean_text(text):
     text = nontext_clean(text)
     text = reduce_repeated_chars(text)
     text = normalize_alay(text)
-    print('cleaned: ', text)
     return text.strip()
