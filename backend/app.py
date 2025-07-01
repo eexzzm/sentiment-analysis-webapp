@@ -5,6 +5,7 @@ import os
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__, template_folder='../frontend/templates')
+UPLOAD_FOLDER = os.path.join('uploads') # Absolute upload folder
 
 @app.route("/")
 def index():
@@ -38,13 +39,20 @@ def predict():
     df['Predicted Sentiment'] = predictions
     
     # Ensure output folder exists
-    os.makedirs('uploads', exist_ok=True)
+    os.makedirs(UPLOAD_FOLDER, exist_ok=True)
     
     result_filename = filename.rsplit('.', 1)[0] + '_predicted.csv'
-    output_path = os.path.join('uploads', result_filename)
+    output_path = os.path.join(UPLOAD_FOLDER, result_filename)
+    print(f"Saving prediction to: {output_path}") # DEBUG
     df.to_csv(output_path, index=False)
 
     return render_template('download.html', result_filename=result_filename)
+
+@app.route('/download/<filename>')
+def download_file(filename):
+    file_path = os.path.join(UPLOAD_FOLDER, filename)
+    print(f"donwloading file from: {file_path}")
+    return send_file(file_path, as_attachment=True, mimetype='text/csv')
 
 if __name__ == '__main__':
     app.run(debug=True)
