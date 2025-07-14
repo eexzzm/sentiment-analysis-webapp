@@ -2,7 +2,8 @@
 A prototype Flask web application for performing sentiment analysis on uploaded CSV data.
 
 # About The Project
-This project delivers a functional web application built with Flask that performs sentiment analysis. It allows users to upload a CSV file containing textual data, specify the column to be analyzed, and then receive predictions on the sentiment of each text entry. The core functionality leverages a Machine Learning model (specifically, a Multinomial Naive Bayes classifier trained on TF-IDF features) to classify sentiment, demonstrating a complete pipeline from data input to model inference and result output within a web environment.
+This project delivers a functional web application built with Flask that performs sentiment analysis. It allows users to upload a CSV file containing textual data, specify the column to be analyzed, and then receive predictions on the sentiment of each text entry. The core functionality leverages a Machine Learning model (specifically, a Multinomial Naive Bayes classifier trained on TF-IDF features) to classify sentiment, demonstrating a complete pipeline from data input to model inference and result output within a web environment.<br/><br/>
+For those interested in the intricacies of the Machine Learning model's development, You can find it here: [`sentiment_analysis.ipynb`](./notebooks/sentiment_analysis.ipynb)
 
 # Features
 - **CSV Upload**: Easily upload .csv or Excel files (.xlsx, .xls) containing your textual data.
